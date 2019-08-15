@@ -4,6 +4,11 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
+    let modArr = arr.map(e => e)    //  Frustratingly, I need to clone arrays if I want the original copy of them.
+    modArr.push(modArr.shift())
+
+    console.log(`rearranger(${arr}) = ${modArr}`)
+    return modArr
 }
 
 
@@ -16,6 +21,19 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
+
+    highestSoFar = arr[0]
+    function maxChecker(arrayItem) {
+        if (arrayItem == highestSoFar) {
+
+        } else if (arrayItem > highestSoFar) {
+            highestSoFar = arrayItem
+        }
+    }
+    arr.forEach(maxChecker)
+
+    console.log(`largestNumber(${arr}) = ${highestSoFar}`)
+    return highestSoFar
 }
 
 
@@ -28,6 +46,11 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let multiplier = arr.length
+    function arrayMultiplier(input) {
+        return input * multiplier
+    }
+    return arr.forEach(arrayMultiplier)
 }
 
 
