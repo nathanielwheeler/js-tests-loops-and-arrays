@@ -4,7 +4,16 @@
 // output: 20
 
 function rangeTotal(n1, n2) {
+  let max = Math.max(n1, n2)
+  let min = Math.min(n1, n2)
+  let total = 0;
 
+  for (i = min; i <= max; i++) {
+    total += i
+  }
+
+  console.log(`rangeTotal(${n1}, ${n2}) = ${total}`)
+  return total
 }
 
 
@@ -19,9 +28,14 @@ function rangeTotal(n1, n2) {
 // 1*2*3*4 = 24
 
 function factorials(num) {
+  let total = 1;
+  for (i = 1; i <= num; i++) {
+    total *= i
+  }
 
+  console.log(`factorials(${num}) = ${total}`)
+  return total
 }
-
 
 // ------------------------------------------
 
@@ -33,5 +47,12 @@ function factorials(num) {
 // output: 2
 
 function rangeDivisor(start, end, divisor) {
+  let numbersDivisible = 0;
 
+  for (i = start - divisor + (start % divisor); i < end; i += divisor) {
+    numbersDivisible++
+  }
+
+  console.log(`rangeDivisor(${start}, ${end}, ${divisor}) = ${numbersDivisible}`)
+  return numbersDivisible
 }
